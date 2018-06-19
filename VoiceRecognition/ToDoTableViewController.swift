@@ -61,7 +61,7 @@ class ToDoTableViewController: UITableViewController {
                 try self.resultsController.performFetch()
                 self.tableView.reloadData()
             } catch let error  {
-                print("ERROR: \(error)")
+                print("update tableview error: \(error)")
             }
         }
         refresher.endRefreshing()

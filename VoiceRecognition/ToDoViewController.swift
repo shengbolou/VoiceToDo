@@ -9,10 +9,8 @@
 import UIKit
 import Speech
 import CoreData
-#if os(iOS)
 import CoreSpotlight
-#endif
-
+import Intents
 
 class ToDoViewController: UIViewController, SFSpeechRecognizerDelegate{
     
@@ -133,6 +131,19 @@ class ToDoViewController: UIViewController, SFSpeechRecognizerDelegate{
             try managedContext.save()
         }catch{
             print("Error saving the item")
+        }
+        
+        let createNoteIntent = INCreateNoteIntent(title: INSpeakableString(spokenPhrase: "Task"), content: INTextNoteContent(text: result), groupName: nil)
+        createNoteIntent.suggestedInvocationPhrase="Create a task"
+        let interaction = INInteraction(intent: createNoteIntent, response: nil)
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("Interaction donation failed: \(error)")
+                }
+            } else {
+                print("Successfully donated interaction")
+            }
         }
         
         dismiss(animated: true)

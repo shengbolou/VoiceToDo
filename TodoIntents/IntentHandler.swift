@@ -22,7 +22,6 @@ class IntentHandler: INExtension, INCreateNoteIntentHandling{
             completion(INCreateNoteIntentResponse(code: INCreateNoteIntentResponseCode.failure, userActivity: nil))
             return
         }
-
         let managedContext = CoreDataStack.resultsController.managedObjectContext
         let todo = Todo(context:managedContext)
         todo.title = (intent.content as? INTextNoteContent)?.text
@@ -33,11 +32,9 @@ class IntentHandler: INExtension, INCreateNoteIntentHandling{
         }catch{
             print("Error saving the item")
         }
-        
         let response = INCreateNoteIntentResponse(code: INCreateNoteIntentResponseCode.success, userActivity: nil)
         response.createdNote = INNote(title: intent.title ?? INSpeakableString(spokenPhrase: "Task"), contents: [content], groupName: nil, createdDateComponents: nil, modifiedDateComponents: nil, identifier: nil)
         completion(response)
-        
     }
     
     

@@ -14,6 +14,7 @@
 		E2316CDE20D40BB4003D846E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2316CDD20D40BB4003D846E /* DetailViewController.swift */; };
 		E2316CE220D44823003D846E /* Todos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2F1F93E20CF708A0098A369 /* Todos.xcdatamodeld */; };
 		E235E7D420CEEE210027F1A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235E7D320CEEE210027F1A9 /* AppDelegate.swift */; };
+		E252403120D9528400211DEF /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214327020D8610D0001D4BF /* IntentHandler.swift */; };
 		E285EC7020CF39CD00BE6D77 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285EC6F20CF39CD00BE6D77 /* ToDoViewController.swift */; };
 		E285EC7420CF3A1C00BE6D77 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285EC7320CF3A1C00BE6D77 /* ToDoTableViewController.swift */; };
 		E285EC8320CF51E400BE6D77 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E285EC8220CF51E400BE6D77 /* CoreDataStack.swift */; };
@@ -266,6 +267,7 @@
 				E285EC8320CF51E400BE6D77 /* CoreDataStack.swift in Sources */,
 				E2316CE220D44823003D846E /* Todos.xcdatamodeld in Sources */,
 				E2316CDE20D40BB4003D846E /* DetailViewController.swift in Sources */,
+				E252403120D9528400211DEF /* IntentHandler.swift in Sources */,
 				E285EC7020CF39CD00BE6D77 /* ToDoViewController.swift in Sources */,
 				E235E7D420CEEE210027F1A9 /* AppDelegate.swift in Sources */,
 			);

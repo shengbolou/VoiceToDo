@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intents
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        print("delegate here")
         if #available(iOS 12.0, *) {
-            if userActivity.activityType == NSUserActivity.viewMenuActivityType {
+            if let intent = userActivity.interaction?.intent as? INCreateNoteIntent{
+                let handler = IntentHandler()
+                handler.handle(intent: intent) { (response) in
+                    if response.code != .success {
+                        print("failed")
+                        return
+                    }
+                }
+                return true
+            }
+            else if userActivity.activityType == NSUserActivity.viewMenuActivityType {
                 guard let window = window,
                     let rootViewController = window.rootViewController as? UINavigationController,
                     let toDoTableViewController = rootViewController.viewControllers.first as? ToDoTableViewController else {
